@@ -18,7 +18,7 @@ const Home = ({ budget, setBudget }) => {
           onInit={(text) => {
             text
               .changeDelay(50)
-              .typeString("Welcome to ExpenseTrackre")
+              .typeString("Welcome to CRUNCH ExpenseTrackre")
               .changeDeleteSpeed(200)
               .changeDelay(200)
               .deleteChars(2)
