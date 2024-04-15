@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 export default function AddTransaction({ AddTransaction }) {
@@ -43,3 +44,4 @@ export default function AddTransaction({ AddTransaction }) {
     </div>
   );
 }
+
