@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 
@@ -65,6 +66,7 @@ const Home = ({ budget, setBudget }) => {
       </button>
     </div>
   );
+
 };
 
 export default Home;

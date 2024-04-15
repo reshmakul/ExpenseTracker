@@ -1,3 +1,4 @@
+
 import Tracker from "./Tracker";
 const OverviewComponent = ({ budget }) => {
   return (
@@ -6,6 +7,7 @@ const OverviewComponent = ({ budget }) => {
       <Tracker budget={budget} />
     </div>
   );
+
 };
 
 export default OverviewComponent;
