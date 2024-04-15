@@ -17,8 +17,11 @@ const Home = ({ budget, setBudget }) => {
           onInit={(text) => {
             text
               .changeDelay(50)
-              .typeString("Welcome to ExpenseTracker .")
+              .typeString("Welcome to ExpenseTrackre")
               .changeDeleteSpeed(200)
+              .changeDelay(200)
+              .deleteChars(2)
+              .typeString("er .")
               .deleteChars(1)
               .typeString(",")
               .deleteChars(1)
