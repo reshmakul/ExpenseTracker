@@ -1,12 +1,12 @@
-
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 
 const Home = ({ budget, setBudget }) => {
   const handleOnChange = (e) => {
     const newBudget = e.target.value;
-
-    setBudget(newBudget);
+    if (newBudget) {
+      setBudget(newBudget);
+    }
   };
   return (
     <div className="h-dvh bg-bg-900 font-main flex flex-col gap-4 justify-center items-center">
@@ -66,7 +66,6 @@ const Home = ({ budget, setBudget }) => {
       </button>
     </div>
   );
-
 };
 
 export default Home;

@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TransactionItem from "./TransactionItem";
 
-const TransactionsContainer = ({ transactions, removeTransaction }) => {
+const TransactionsContainer = ({
+  transactionValue,
+  expenseValue,
+  inputState,
+  setInputState,
+}) => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredTransactions, setFilteredTransactions] =
-    useState(transactions);
+    useState(transactionValue);
 
   useEffect(() => {
     filterTransactions(searchInput);
-  }, [transactions, searchInput]);
+  }, [transactionValue, searchInput]);
 
   const filterTransactions = (input) => {
     if (!input || !input.trim().length) {
-      setFilteredTransactions(transactions);
+      setFilteredTransactions(transactionValue);
       return;
     }
 
-    const filtered = transactions.filter((item) =>
-      item.details.toLowerCase().includes(input.toLowerCase().trim())
-    );
-    setFilteredTransactions(filtered);
+    // const filtered = transactions.filter((item) =>
+    //   item.details.toLowerCase().includes(input.toLowerCase().trim())
+    // );
+    // setFilteredTransactions(filtered);
   };
 
   return (
@@ -40,9 +45,13 @@ const TransactionsContainer = ({ transactions, removeTransaction }) => {
         {filteredTransactions.length ? (
           filteredTransactions.map((transaction) => (
             <TransactionItem
+              inputState={inputState}
+              setInputState={setInputState}
+              transactionValue={transactionValue}
+              expenseValue={expenseValue}
               key={transaction.id}
               transaction={transaction}
-              removeTransaction={removeTransaction}
+              // removeTransaction={removeTransaction}
             />
           ))
         ) : (
